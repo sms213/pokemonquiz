@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Who's That Pokemon?</title>
+<link href="bootstrap.min.css" rel="stylesheet" media="screen">
+<style>
+body {
+background-color: grey;
+font-family: Helvetica;
+background-image:url(background.png);
+}
+
+div {
+margin: auto;
+}
+
+img.round {
+    -moz-border-radius: 10px; 
+    -webkit-border-radius: 10px; 
+    border-radius: 10px;
+}
+
+#main {
+width: 47%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+}
+
+#header {
+margin-top: 0;
+padding: 5px;
+color: white;
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+	<div id="header">
+	<center><img src="banner.jpg" class="round" width="100%"></center></br>
+	</div>
+
+
+
+		<div class="container">
+		<div class="row">	
+<div class="col-md-4">
+<form  id="form" action=" ">
+<span id="charcolor"><img src="charmander.png" width="70%"></span></br> 
+<input type="radio" name="charm" value="0" /> Pikachu<br />
+<input type="radio" name="charm" value="0" /> Weedle<br />
+<input type="radio" name="charm" value="0" /> Horsea<br />
+<input type="radio" name="charm" value="10" /> Charmander<br />
+</div>
+
+<div class="col-md-4">
+<span id="eveecolor"><img src="evee.png" width="90%"></span></br> 
+<input type="radio" name="evee" value="10" /> Evee<br />
+<input type="radio" name="evee" value="0" /> Pinsir<br />
+<input type="radio" name="evee" value="0" /> Gastly<br />
+<input type="radio" name="evee" value="0" /> Flareon<br />
+</div>
+
+<div class="col-md-4">
+<span id="pikacolor"><img src="pikachu.png" width="90%"></span></br> 
+<input type="radio" name="pika" value="0" /> Drowzee<br />
+<input type="radio" name="pika" value="10" /> Pikachu<br />
+<input type="radio" name="pika" value="0" /> Evee<br />
+<input type="radio" name="pika" value="0" /> Rattata<br />
+</div>
+		</div>
+		
+		<div class="row">	
+<div class="col-md-4">
+<span id="tancolor"><img src="tangela.png" width="92%"></span></br> 
+<input type="radio" name="tan" value="10" /> Tangela<br />
+<input type="radio" name="tan" value="0" /> Snorlax<br />
+<input type="radio" name="tan" value="0" /> Fearow<br />
+<input type="radio" name="tan" value="0" /> Geodude<br />
+</div>
+
+<div class="col-md-4">
+<span id="oddcolor"><img src="oddish.png" width="93%"></span></br> 
+<input type="radio" name="odd" value="0" /> Ekans<br />
+<input type="radio" name="odd" value="0" /> Vulpix<br />
+<input type="radio" name="odd" value="10" /> Oddish<br />
+<input type="radio" name="odd" value="0" /> Pidgey<br />
+</div>
+
+<div class="col-md-4">
+<span id="psyduckcolor"><img src="psyduck.png" width="65%"></span></br> 
+<input type="radio" name="psy" value="0" /> Golbat<br />
+<input type="radio" name="psy" value="0" /> Mewtew<br />
+<input type="radio" name="psy" value="10" /> Psyduck<br />
+<input type="radio" name="psy" value="0" /> Jigglypuff<br />
+</div>
+		</div>
+		
+		<div class="row">	
+<div class="col-md-4">
+<span id="jigcolor"><img src="jiggly.png" width="78%"></span></br> 
+<input type="radio" name="jig" value="0" /> Bulbasaur<br />
+<input type="radio" name="jig" value="0" /> Kadabra<br />
+<input type="radio" name="jig" value="0" /> Kabuta<br />
+<input type="radio" name="jig" value="10" /> Jigglypuff<br />
+</div>
+
+<div class="col-md-4">
+<span id="weedlecolor"><img src="weedle.png" width="57%"></span></br> 
+<input type="radio" name="wee" value="10" /> Weedle<br />
+<input type="radio" name="wee" value="0" /> Horsea<br />
+<input type="radio" name="wee" value="0" /> Krabby<br />
+<input type="radio" name="wee" value="0" /> Caterpie<br />
+</div>
+
+<div class="col-md-4">
+<span id="pincolor"><img src="pinsir.png" width="100%"></span></br> 
+<input type="radio" name="pin" value="0" /> Nidoran<br />
+<input type="radio" name="pin" value="20" /> Pinsir<br />
+<input type="radio" name="pin" value="0" /> Squirtle<br />
+<input type="radio" name="pin" value="0" /> Venomoth<br />
+</div>
+		</div>
+
+
+		<div class="row">	
+		<div class="col-md-12"></br>
+		<input type="submit" value="Submit">
+		</form>
+		</div>
+		</div>
+
+
+		<div class="row">	
+		<div class="col-md-12">
+		<hr>
+		<p>Your grade is:  <span id="grade">__</span></p>
+		<p id="grade2"></p>
+		</div>
+		</div>
+
+</div><!-- close container -->
+</div><!-- close main div -->
+
+
+
+
+<script>
+document.getElementById("form").onsubmit=function() {
+    charm = parseInt(document.querySelector('input[name = "charm"]:checked').value);
+	   evee = parseInt(document.querySelector('input[name = "evee"]:checked').value);
+	   pika = parseInt(document.querySelector('input[name = "pika"]:checked').value);
+	   tan = parseInt(document.querySelector('input[name = "tan"]:checked').value);
+	   psy = parseInt(document.querySelector('input[name = "psy"]:checked').value);
+	   odd = parseInt(document.querySelector('input[name = "odd"]:checked').value);
+	   jig = parseInt(document.querySelector('input[name = "jig"]:checked').value);
+	   wee = parseInt(document.querySelector('input[name = "wee"]:checked').value);
+	   pin = parseInt(document.querySelector('input[name = "pin"]:checked').value);
+	   
+
+	   
+	   
+	   result = charm + evee + pika + tan + psy + odd + jig + wee + pin;
+	   
+	   
+	document.getElementById("grade").innerHTML = result;
+	if (result == 0) {result2 = "You have failed the Poke Gods.. Do you even Pokemon, bro?<br /><img src='0.gif' width='300' />"};
+    if (result == 10) {result2 = "Wow.. You've made Pikachu sad at how much you suck<br /><img src='0.gif' width='300' />"};
+    if (result == 20) {result2 = "Wow.. You've made Pikachu sad at how much you suck<br /><img src='0.gif' width='300' />"};
+    if (result == 30) {result2 = "You are terrible!<br /><img src='0.gif' width='300' />"};
+    if (result == 40) {result2 = "Have you ever even played Pokemon?<br /><img src='40.gif' width='300' />"};
+    if (result == 50) {result2 = "Well, you're an embarrassment..<br /><img src='50.gif' width='300' />"};
+    if (result == 60) {result2 = "Not too bad.. But also not great<br /><img src='50.gif' width='300' />"};
+    if (result == 70) {result2 = "Pretty good! But you're not the best<br /><img src='70.gif' width='300' />"};
+    if (result == 80) {result2 = "Good job! Pikachu is happy!<br /><img src='80.gif' width='300' />"};
+    if (result == 90) {result2 = "Awesome! You must be an incredible Pokemon master!<br /><img src='80.gif' width='300' />"};
+    if (result == 100) {result2 = "You are the very best, like no one ever was!<br /><img src='100.gif' width='300' />"};
+    document.getElementById("grade2").innerHTML = result2; 
+    
+    
+
+    if (charm == 10) { document.getElementById("charcolor").innerHTML = "<img src='charcolor.png' width='70%'>"; }
+    if (evee == 10) { document.getElementById("eveecolor").innerHTML = "<img src='eveecolor.png' width='90%'>"; }
+    if (pika == 10) { document.getElementById("pikacolor").innerHTML = "<img src='pikacolor.png' width='90%'>"; }
+    if (tan == 10) { document.getElementById("tancolor").innerHTML = "<img src='tancolor.png' width='92%'>"; }
+    if (odd == 10) { document.getElementById("oddcolor").innerHTML = "<img src='oddishcolor.png' width='93%'>"; }
+    if (psy == 10) { document.getElementById("psyduckcolor").innerHTML = "<img src='psyduckcolor.png' width='65%'>"; }
+    if (jig == 10) { document.getElementById("jigcolor").innerHTML = "<img src='jiggcolor.png' width='78%'>"; }
+    if (wee == 10) { document.getElementById("weedlecolor").innerHTML = "<img src='weedlecolor.png' width='57%'>"; }
+    if (pin == 20) { document.getElementById("pincolor").innerHTML = "<img src='pinsircolor.png' width='100%'>"; }
+    
+    
+	   
+
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+</script>
+
+
+
+</body>
+</html>

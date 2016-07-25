@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Who's That Pokemon?</title>
+<link href="bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<div class="container">
+
+<div class="row">
+<div class="col-md-12">
+<center><img src="banner.jpg"></center>
+</div>
+</div>
+
+
+
+<form  id="form">
+
+
+<div class="row">
+
+<div class="col-md-4">
+<img src="charmander.png" width="20%"></br> 
+<input type="radio" name="char" value="10" />Charmander<br />
+<input type="radio" name="char" value="0" />Bulbasaur<br />
+<input type="radio" name="char" value="0" />Snorlax<br />
+<input type="radio" name="char" value="0" />Kakuna<br />
+</div>
+
+<div class="col-md-4">
+<img src="charmander.png" width="20%"></br> 
+<input type="radio" name="evee" value="10" />Pikachu<br />
+<input type="radio" name="evee" value="0" />Oddish<br />
+<input type="radio" name="evee" value="10" />Evee<br />
+<input type="radio" name="evee" value="0" />Rattata<br />
+</div>
+
+<div class="col-md-4">
+<img src="charmander.png" width="20%"></br> 
+<input type="radio" name="evee" value="10" />Pikachu<br />
+<input type="radio" name="evee" value="0" />Oddish<br />
+<input type="radio" name="evee" value="10" />Evee<br />
+<input type="radio" name="evee" value="0" />Rattata<br />
+</div>
+
+
+<br />
+<input type="submit" value="Submit">
+</form>
+
+
+<p><span id="grade">__</span></p>
+<p id="grade2"></p>
+</div><!-- close main div -->
+
+</div> <!--close row -->
+
+
+<script>
+document.getElementById("form1").onsubmit=function() {
+    variable = parseInt(document.querySelector('input[name = "variable"]:checked').value);
+	   sub = parseInt(document.querySelector('input[name = "sub"]:checked').value);
+	   con = parseInt(document.querySelector('input[name = "con"]:checked').value);
+	   
+	   //below is the way to evaluate the value of a dropdown -easier than radio buttons
+	   //parseInt is to make sure it doesn't evaluate as a string
+	   ifstate = parseInt(document.getElementById("ifstate").value);
+	   
+	   
+	   result = variable + sub + con + ifstate;
+	   
+	document.getElementById("grade").innerHTML = result;
+	if (result == 0) {result2 = "I don't think you studied.<br /><img src='0.jpg' width='300' />"};
+    if (result == 10) {result2 = "You need to spend more time. Try again.<br /><img src='25.jpg' width='300' />"};
+    if (result == 20) {result2 = "I think you could do better. Try again.<br /><img src='50.jpg' width='300' />"};
+    if (result == 75) {result2 = "So close. Try again.<br /><img src='75.jpg' width='300' />"};
+    if (result == 100) {result2 = "You're a JavaScript pro!<br /><img src='100.jpg' width='300' />"};
+    document.getElementById("grade2").innerHTML = result2; 
+	   
+
+
+return false; // required to not refresh the page; just leave this here
+} //this ends the submit function
+
+
+</script>
+
+
+
+</body>
+</html>
